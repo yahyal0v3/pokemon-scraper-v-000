@@ -5,11 +5,10 @@ class Pokemon
 
   @@all = []
 
-  def initialize(id: , name: , type: , hp: , db: )
+  def initialize(id: , name: , type: , db: )
     @id = id
     @name = name
     @type = type
-    @hp = hp
     @db = db
     @@all << self
   end
@@ -21,7 +20,7 @@ class Pokemon
 
   def self.find(id, db)
     pokemon_array = db.execute("SELECT * FROM pokemon WHERE id = (?)", id).flatten
-    Pokemon.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], hp: pokemon_array[3], db: db)
+    Pokemon.new(id: pokemon_array[0], name: pokemon_array[1], type: pokemon_array[2], db: db)
   end
 
 
