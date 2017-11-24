@@ -6,7 +6,7 @@ class Pokemon
   @@all = []
 
   def initialize(id: , name: , type: , hp: , db: )
-    binding.pry 
+    binding.pry
     @id = id
     @name = name
     @type = type
