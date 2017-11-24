@@ -17,9 +17,7 @@ class Pokemon
   end
 
   def self.find(id, db)
-    @@all.detect do |pokemon|
-      pokemon.id = id
-    end
+    db.execute("SELECT * FROM pokemon WHERE id = (?)", id)
   end
 
 
